@@ -1,3 +1,5 @@
+**This is a fork of [modesty/pdf2json](https://github.com/modesty/pdf2json) with a small additional feature: each page has a `Width` property**
+
 # pdf2json
 
 pdf2json is a [node.js](http://nodejs.org/) module that parses and converts PDF from binary to json format, it's built with [pdf.js](https://github.com/mozilla/pdf.js/) and extends it with interactive form elements and text content parsing outside browser.
@@ -138,12 +140,13 @@ Current parsed data has four main sub objects to describe the PDF document.
         * Max: default -1;
         * Parent: parent name, default "unknown";
 * 'Pages': array of 'Page' object that describes each page in the PDF, including sizes, lines, fills and texts within the page. More info about 'Page' object can be found at 'Page Object Reference' section
-* 'Width': the PDF page width in page unit
+* 'Width': the width of the first PDF page in page unit
 
 ### Page object Reference
 
 Each page object within 'Pages' array describes page elements and attributes with 5 main fields:
 
+* 'Width': width of the page in page unit
 * 'Height': height of the page in page unit
 * 'HLines': horizontal line array, each line has 'x', 'y' in relative coordinates for positioning, and 'w' for width, plus 'l' for length. Both width and length are in page unit
 * 'Vline': vertical line array, each line has 'x', 'y' in relative coordinates for positioning, and 'w' for width, plus 'l' for length. Both width and length are in page unit;
